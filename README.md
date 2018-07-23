@@ -23,7 +23,7 @@ componentWillUnmount() {
 you can do this.
 
 ```js
-import createSubsriptions from 'redux-elm-subscriptions';
+import { createSubsriptions, subNone } from 'redux-elm-subscriptions';
 
 ...
 
@@ -33,8 +33,8 @@ const mySubscriptions = (state, dispatch) => {
   // a function to unsubscribe
   const arrowKeysSub = () => {
     const handler = e => {
-      if (e.keyCode === '...') {
-        dispatch({ action: 'ARROW_PRESS' });
+      if (e.keyCode === 32) {
+        dispatch({ action: 'SPACE_PRESS' });
       }
     };
     document.addEventListener('keydown', handler);
@@ -43,24 +43,41 @@ const mySubscriptions = (state, dispatch) => {
     };
   };
 
-  // if you want to listen return your subscription function otherwise use null
-  const arrowKeys =
-    state.page === 'page I wanna subscribe on' ? arrowKeysSub : subNone;
+  const listenToClicks = () => {
+    const handler = () => { dispatch({ type: 'DOCUMENT_CLICK' }); };
+    document.addEventListener('click', handler);
+    return () => { document.removeEventListener('click', handler); };
+  };
 
   return {
-    arrowKeys,
+    arrowKeys: arrowKeysSub,
     anotherSubscriptions: () => {
-      // subscribe
+      // subscribe here
       return () => {
-        // unsubscribe
+        // unsubscribe here
       };
     },
+    // only listen to clicks when the modal is open
+    conditionalSubscription: state.modalOpen ? listenToClicks : subNone,
   };
 };
 
+// add them to the store
 store.subscribe(createSubscriptions(store)(mySubscriptions));
 ```
 Also check out the [example](example.js).
+
+## Some Details
+
+The API is designed so you can control listening behavior based on your `state`.
+You subscription function receives the `state` and `dispatch` as parameters and
+should start listening to some event in the world, after that it needs to return
+a function to unsubscribe from the event you just started listening to. The
+function will be called every time the state changes, if a subscription is no
+longer present, the unsubscribe function will be called automatically.
+
+As long as yo make sure that your functions return functions to unsubscribe
+everything should be handled automatically for you.
 
 ## How does it work?
 

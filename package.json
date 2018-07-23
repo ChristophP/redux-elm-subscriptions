@@ -5,7 +5,8 @@
     "type": "git",
     "url": "https://github.com/ChristophP/redux-elm-subscriptions.git"
   },
-  "description": "A tiny, zero-dependency package to listen to global events in an Elm Architecture manner.",
+  "description":
+    "A tiny, zero-dependency package to listen to global events in an Elm Architecture manner.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
