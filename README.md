@@ -59,5 +59,10 @@ const mySubscriptions = (state, dispatch) => {
 };
 
 store.subscribe(createSubscriptions(store)(mySubscriptions));
-
 ```
+Also check out the [example](/ChristophP/redux-elm-subscriptions/blob/master/example.js).
+
+## How does it work?
+
+Check out the [source](/ChristophP/redux-elm-subscriptions/blob/master/index.js).
+It's very simple, less than 30 LOC and needs no dependencies.
