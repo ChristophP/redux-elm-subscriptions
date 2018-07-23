@@ -6,6 +6,10 @@ Listen to global events Elm Style.
 
 When creating components you most likely wanna keep your components dumb
 and not use lifecycle hooks which couples rendering to functionality.
+This package revolves around the idea that some of the events you listen
+to are global and come from a world "outside" of your application like:
+global mouse events, timers and animation frame callbacks, window focus and
+blur etc.
 
 So instead of this in a component file ...
 
