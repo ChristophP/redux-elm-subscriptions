@@ -1,6 +1,10 @@
 {
   "name": "redux-elm-subscriptions",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChristophP/redux-elm-subscriptions.git"
+  },
   "description":
     "A tiny, zero-dependency package to listen to global events in an Elm Architecture manner.",
   "main": "index.js",
