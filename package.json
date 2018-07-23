@@ -1,6 +1,6 @@
 {
   "name": "redux-elm-subscriptions",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description":
     "A tiny, zero-dependency package to listen to global events in an Elm Architecture manner.",
   "main": "index.js",
