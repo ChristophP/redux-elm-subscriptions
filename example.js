@@ -1,6 +1,6 @@
 import { createSubscriptions, subNone } from 'redux-elm-subscriptions';
 
-const subs = (state, dispatch) => {
+const mapStateToSubs = (state, dispatch) => {
   const listenToDocClicks = () => {
     const handler = () => {
       dispatch({ type: 'DOCUMENT_CLICK' });
@@ -31,4 +31,4 @@ const subs = (state, dispatch) => {
   };
 };
 
-store.subscribe(createSubscriptions(store)(subs));
+store.subscribe(createSubscriptions(store)(mapStateToSubs));

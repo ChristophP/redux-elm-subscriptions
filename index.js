@@ -3,12 +3,12 @@ module.exports.subNone = null;
 module.exports.createSubscriptions = ({
   getState,
   dispatch,
-}) => getSubscriptions => {
+}) => mapStateToSubs => {
   var _subState = {};
 
   return function() {
     var state = getState();
-    var subs = getSubscriptions(state, dispatch);
+    var subs = mapStateToSubs(state, dispatch);
     // if new value is there, subscribe and store unsubscribe function
     Object.keys(subs).forEach(function(key) {
       if (!_subState[key] && typeof subs[key] === 'function') {

@@ -27,7 +27,7 @@ import { createSubsriptions, subNone } from 'redux-elm-subscriptions';
 
 ...
 
-const mySubscriptions = (state, dispatch) => {
+const mapStateToSubs = (state, dispatch) => {
 
   // each subscription function needs to set up the subscription and return
   // a function to unsubscribe
@@ -64,7 +64,7 @@ const mySubscriptions = (state, dispatch) => {
 };
 
 // add them to the store
-store.subscribe(createSubscriptions(store)(mySubscriptions));
+store.subscribe(createSubscriptions(store)(mapStateToSubs));
 ```
 Also check out the [example](example.js).
 
