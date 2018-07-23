@@ -7,7 +7,7 @@ Listen to global events Elm Style.
 When creating components you most likely wanna keep your components dumb
 and not use lifecycle hooks which couples rendering to functionality.
 
-So instead of this
+So instead of this in a component file ...
 
 ```js
 componentDidMount() {
@@ -20,7 +20,7 @@ componentWillUnmount() {
 }
 ```
 
-you can do this.
+you can do this in a central place in your code ...
 
 ```js
 import { createSubsriptions, subNone } from 'redux-elm-subscriptions';
