@@ -1,0 +1,11 @@
+{
+  "name": "redux-elm-subscriptions",
+  "version": "1.0.0",
+  "description": "A tiny package to manage global events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
