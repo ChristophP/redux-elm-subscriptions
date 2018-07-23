@@ -31,6 +31,7 @@ import { createSubsriptions, subNone } from 'redux-elm-subscriptions';
 
 ...
 
+// will be called every time time the state changes
 const mapStateToSubs = (state, dispatch) => {
 
   // each subscription function needs to set up the subscription and return
