@@ -70,13 +70,14 @@ Also check out the [example](example.js).
 ## Some Details
 
 The API is designed so you can control listening behavior based on your `state`.
-You subscription function receives the `state` and `dispatch` as parameters and
-should start listening to some event in the world, after that it needs to return
+Your subscription function receives the `state` and `dispatch` as parameters and
+should start listening to some event in the world. After that it needs to return
 a function to unsubscribe from the event you just started listening to. The
-function will be called every time the state changes, if a subscription is no
-longer present, the unsubscribe function will be called automatically.
+function will be called every time the state changes. If a subscription is no
+longer present in the returned object, the unsubscribe function will be called
+automatically.
 
-As long as yo make sure that your functions return functions to unsubscribe
+As long as yo make sure that your functions return functions to unsubscribe,
 everything should be handled automatically for you.
 
 ## How does it work?
