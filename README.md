@@ -49,6 +49,7 @@ const mySubscriptions = (state, dispatch) => {
     return () => { document.removeEventListener('click', handler); };
   };
 
+  // return an object of subscriptions
   return {
     arrowKeys: arrowKeysSub,
     anotherSubscriptions: () => {
@@ -58,7 +59,7 @@ const mySubscriptions = (state, dispatch) => {
       };
     },
     // only listen to clicks when the modal is open
-    conditionalSubscription: state.modalOpen ? listenToClicks : subNone,
+    documentClick: state.modalOpen ? listenToClicks : subNone,
   };
 };
 
