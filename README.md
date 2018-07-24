@@ -97,8 +97,9 @@ better server by a library like [redux-loop](https://redux-loop.js.org/).
 Examples that are not subscriptions but effects include:
 
 - making http requests
-- setting a one-time timeout (although setting an interval would be a subscription)
 - reading from the localStorage
+
+Also, of course the subscriptions are only for global events. DOM Events that happen within the virtual DOM should be handled directly in your components.
 
 ## How does it work?
 
