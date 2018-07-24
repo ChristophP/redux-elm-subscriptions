@@ -2,6 +2,8 @@
 
 Listen to global events Elm Style.
 
+```sh npm i -S redux-elm-subscriptions```
+
 ## Why?
 
 When creating components you most likely wanna keep your components dumb
