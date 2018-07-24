@@ -2,7 +2,9 @@
 
 Listen to global events Elm Style.
 
-```sh npm i -S redux-elm-subscriptions```
+```sh
+npm i -S redux-elm-subscriptions
+```
 
 ## Why?
 
