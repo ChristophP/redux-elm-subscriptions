@@ -8,8 +8,11 @@ When creating components you most likely wanna keep your components dumb
 and not use lifecycle hooks which couples rendering to functionality.
 This package revolves around the idea that some of the events you listen
 to are global and come from a world "outside" of your application like:
-global mouse events, timers and animation frame callbacks, window focus and
-blur etc.
+
+- global mouse events
+- timers and animation frame callbacks
+- window focus and blur etc.
+- listening to websocket messages
 
 So instead of this in a component file ...
 
@@ -85,6 +88,17 @@ automatically.
 
 As long as yo make sure that your functions return functions to unsubscribe,
 everything should be handled automatically for you.
+
+## What not to use it for?
+
+This lib was build to listen events which happen outside the scope of your app. Don't
+use it for one-time things are things that involve performing other work. Those will be
+better server by a library like [redux-loop](https://redux-loop.js.org/).
+Examples that are not subscriptions but effects include:
+
+- making http requests
+- setting a one-time timeout (although setting an interval would be a subscription)
+- reading from the localStorage
 
 ## How does it work?
 
