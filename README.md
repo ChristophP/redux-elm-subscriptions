@@ -93,13 +93,13 @@ everything should be handled automatically for you.
 
 This lib was build to listen events which happen outside the scope of your app. Don't
 use it for one-time things are things that involve performing other work. Those will be
-better server by a library like [redux-loop](https://redux-loop.js.org/).
+better served by a library like [redux-loop](https://redux-loop.js.org/).
 Examples that are not subscriptions but effects include:
 
 - making http requests
 - reading from the localStorage
 
-Also, of course the subscriptions are only for global events. DOM Events that happen within the virtual DOM should be handled directly in your components.
+Also, of course the subscriptions are only for global events. DOM Events that happen within the virtual DOM that is managed by your app, should be handled directly in your components.
 
 ## How does it work?
 
